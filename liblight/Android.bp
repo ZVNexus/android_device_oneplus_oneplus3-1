@@ -18,6 +18,9 @@ cc_binary {
     relative_install_path: "hw",
     init_rc: ["android.hardware.light@2.0-service.oneplus3.rc"],
     srcs: ["service.cpp", "Light.cpp"],
+    header_libs: [
+        "libhardware_headers",
+    ],
     shared_libs: [
         "libbase",
         "libcutils",

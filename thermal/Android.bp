@@ -19,6 +19,9 @@ cc_library_shared {
     cflags: ["-Wno-unused-parameter"],
     relative_install_path: "hw",
     srcs: ["thermal.c"],
+    header_libs: [
+        "libhardware_headers",
+    ],
     shared_libs: [
         "liblog",
         "libcutils",

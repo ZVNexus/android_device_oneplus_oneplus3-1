@@ -357,8 +357,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
 $(call inherit-product, build/target/product/verity.mk)
 
-# VNDK-SP:
+# VNDK
 PRODUCT_PACKAGES += \
+    libstdc++.vendor \
+    vndk_package \
     vndk-sp
 
 # VR
