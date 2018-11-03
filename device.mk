@@ -27,6 +27,9 @@ $(call inherit-product, vendor/extras/configs/phone-xxhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, vendor/extras/configs/phone-xxhdpi-2048-hwui-memory.mk)
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
+# Vendor properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -362,6 +365,11 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     vndk_package \
     vndk-sp
+
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk_package \
+    libstdc++.vendor
 
 # VR
 PRODUCT_PACKAGES += \
