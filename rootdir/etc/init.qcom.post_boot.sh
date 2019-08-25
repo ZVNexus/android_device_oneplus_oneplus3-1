@@ -4165,6 +4165,8 @@ case "$target" in
 		echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 	fi
 	echo N > /sys/module/lpm_levels/parameters/sleep_disabled
+        # Starting perfd service
+          start vendor.perfd
         # Starting io prefetcher service
         start iop
 
