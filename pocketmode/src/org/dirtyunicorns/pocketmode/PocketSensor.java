@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.pocketmode;
+package org.dirtyunicorns.pocketmode;
 
 import android.content.Context;
 import android.hardware.Sensor;

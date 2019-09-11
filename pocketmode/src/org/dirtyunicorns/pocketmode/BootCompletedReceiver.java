@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.pocketmode;
+package org.dirtyunicorns.pocketmode;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
