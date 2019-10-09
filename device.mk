@@ -33,7 +33,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/oneplus/oneplus3 \
-    vendor/nxp/opensource/pn5xx
+    vendor/nxp/opensource/pn5xx \
+    vendor/oneplus/oneplus3
 
 # Permissions
 PRODUCT_COPY_FILES += \
