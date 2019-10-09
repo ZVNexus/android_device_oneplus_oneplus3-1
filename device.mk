@@ -33,7 +33,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/oneplus/oneplus3
+PRODUCT_SOONG_NAMESPACES += \
+    device/oneplus/oneplus3 \
+    vendor/oneplus/oneplus3
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
