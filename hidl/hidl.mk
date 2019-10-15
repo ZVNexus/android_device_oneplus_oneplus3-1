@@ -90,10 +90,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.nxp.hardware.nfc@1.2-service
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
-
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
