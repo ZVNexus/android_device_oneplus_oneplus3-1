@@ -32,19 +32,20 @@ $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Soong namespaces
+# Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/oneplus/oneplus3 \
     vendor/oneplus/oneplus3
 
-# Device uses high-density artwork where available
+# High Density Artwork
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Boot animation
+# Boot Animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
+# Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m \
     dalvik.vm.heapstartsize=8m \
@@ -63,7 +64,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config \
     persist.radio.multisim.config=dsds
 
-# Haters gonna hate..
+# SDCard
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Alipay
@@ -133,7 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7
 
-# Additional native libraries
+# Public Libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
@@ -147,7 +148,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.bluetooth_audio_hal.disabled=true \
     vendor.qcom.bluetooth.soc=rome
 
-# Connectivity Engine support (CNE)
+# CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne \
@@ -174,11 +175,11 @@ PRODUCT_PACKAGES += \
     qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
     qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
 
-# Doze mode
+# Doze
 PRODUCT_PACKAGES += \
     OneplusDoze
 
-# Fingerprint sensor
+# Fingerprint
 PRODUCT_PACKAGES += \
     OneplusPocketMode
 
@@ -206,7 +207,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# Keylayouts
+# Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics.kl
@@ -255,7 +256,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.nfc_nci=nqx.default \
     vendor.qti.nfc.chipid=0x51
 
-# OEM Unlock reporting
+# OEM Unlock
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1
 
@@ -333,7 +334,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-# TextClassifier smart selection model files
+# TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
