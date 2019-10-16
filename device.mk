@@ -173,7 +173,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    OneplusDoze
+    CustomDoze
 
 # Fingerprint
 PRODUCT_PACKAGES += \
