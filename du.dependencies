@@ -25,11 +25,6 @@
    "branch"     : "q10x"
  },
  {
-   "repository" : "DirtyUnicorns/android_hardware_qcom_wlan-caf",
-   "target_path": "hardware/qcom/wlan-caf",
-   "branch"     : "q10x-caf"
- },
- {
    "repository" : "DirtyUnicorns/android_kernel_oneplus_msm8996",
    "target_path": "kernel/oneplus/msm8996",
    "branch"     : "q10x"
