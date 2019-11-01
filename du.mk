@@ -21,6 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit custom ROM.
 $(call inherit-product, vendor/du/config/common_full_phone.mk)
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
 
 # Inherit device configuration.
 $(call inherit-product, device/oneplus/oneplus3/device.mk)
