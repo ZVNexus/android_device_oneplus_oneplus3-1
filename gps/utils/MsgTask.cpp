@@ -74,12 +74,7 @@ void MsgTask::destroy() {
 }
 
 void MsgTask::sendMsg(const LocMsg* msg) const {
-    if (msg && this) {
-        msg_q_snd((void*)mQ, (void*)msg, LocMsgDestroy);
-    } else {
-        LOC_LOGE("%s: msg is %p and this is %p",
-                 __func__, msg, this);
-    }
+    msg_q_snd((void*)mQ, (void*)msg, LocMsgDestroy);
 }
 
 void MsgTask::prerun() {
