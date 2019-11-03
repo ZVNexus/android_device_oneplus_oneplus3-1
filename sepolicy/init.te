@@ -1,0 +1,5 @@
+allow init hal_perf_default:binder call;
+allow init hal_perf_hwservice:hwservice_manager find;
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder { call transfer };
+allow init vndbinder_device:chr_file r_file_perms;

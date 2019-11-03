@@ -24,7 +24,9 @@ allow dashd self:capability sys_resource;
 ###
 ### dashd: charger mode
 ###
-#allow dashd sysfs:file { open read write ioctl };
+allow dashd rootfs:dir r_dir_perms;
+allow dashd sysfs:file r_file_perms;
+allow dashd vendor_file:dir r_dir_perms;
 allow dashd dash_device:chr_file { open read write ioctl };
 allow dashd rootfs:file { entrypoint read execute getattr };
 
