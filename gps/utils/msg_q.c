@@ -293,12 +293,6 @@ msq_q_err_type msg_q_rmv(void* msg_q_data, void** msg_obj)
       return eMSG_Q_UNAVAILABLE_RESOURCE;
    }
 
-   if (linked_list_empty(p_msg_q->msg_list)) {
-      LOC_LOGW("%s: list is empty !!\n", __FUNCTION__);
-      pthread_mutex_unlock(&p_msg_q->list_mutex);
-      return eLINKED_LIST_EMPTY;
-   }
-
    rv = convert_linked_list_err_type(linked_list_remove(p_msg_q->msg_list, msg_obj));
 
    pthread_mutex_unlock(&p_msg_q->list_mutex);
