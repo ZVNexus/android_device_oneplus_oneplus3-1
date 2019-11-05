@@ -21,17 +21,21 @@
          are routed through the android.media.AudioManager class (true) or through
          the com.android.internal.telephony.Phone interface (false). -->
     <bool name="send_mic_mute_to_AudioManager">true</bool>
+    <!-- Configure certain GsmUmtsOptions to be available or not. The
+         default values are in Phone/res/values/config.xml and maybe overridden
+         in operator specific resource directories or device specific overlays. -->
+    <bool name="config_apn_expand" translatable="false">false</bool>
     <!-- Show enabled lte option for lte device -->
     <bool name="config_enabled_lte" translatable="false">true</bool>
-    <!-- Allows the telephony HFA logic to run even if we're not in setup wizard. -->
-    <bool name="config_allow_hfa_outside_of_setup_wizard">false</bool>
-    <!-- Show Hearing aids option in  Call Settings -->
-    <bool name="hac_enabled">true</bool>
-    <!-- Allow handover from telephony calls to another ConnectionService. -->
-    <bool name="config_support_handover_from">true</bool>
-    <!-- This device supports the AudioManager Telephony audio device and output onto this
-         device using {@link AudioDeviceInfo#TYPE_TELEPHONY}.
-         This is used to support carriers which generate a recording tone to the remote party
-         when a call recording app is in use. -->
-    <bool name="config_support_telephony_audio_device">true</bool>
+    <!-- Show cdma auto network mode in (glabal) roaming -->
+    <bool name="config_show_cdma" translatable="false">true</bool>
+    <!-- CDMA activation goes through HFA [DO NOT TRANSLATE] -->
+    <bool name="config_use_hfa_for_provisioning" translatable="false">true</bool>
+    <!-- Display carrier settings -->
+    <bool name="config_carrier_settings_enable">true</bool>
+    <!-- Don't display swap button after merging calls into Cdma conference. -->
+    <bool name="support_swap_after_merge">false</bool>
+    <!-- carrier settings menu -->
+    <string name="carrier_settings" translatable="false">com.android.sdm.plugins.sprintdm</string>
+    <string name="carrier_settings_menu" translatable="false">com.android.sdm.plugins.sprintdm.SprintCarrierSettingsActivity</string>
 </resources>

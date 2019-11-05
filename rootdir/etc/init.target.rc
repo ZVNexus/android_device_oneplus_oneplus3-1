@@ -332,7 +332,7 @@ service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    group radio diag inet log
    writepid /dev/cpuset/system-background/tasks
 
-service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+service vendor.rcsservice /system/vendor/bin/rcsservice
    class main
    user system
    group radio diag inet log wakelock

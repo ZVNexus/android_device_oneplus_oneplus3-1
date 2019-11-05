@@ -46,13 +46,36 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.sib16_support=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.rat_on=combine \
     sys.vendor.shutdown.waittime=500 \
-    ro.frp.pst=/dev/block/bootdevice/by-name/config \
-    persist.radio.multisim.config=dsds
+    ro.frp.pst=/dev/block/bootdevice/by-name/config
+
+# Enable SM log mechanism by default
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.smlog_switch=1 \
+    ro.radio.log_prefix="modem_log_" \
+    ro.radio.log_loc="/data/smlog_dump"
+endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.mode=concurrent
+
+# IMS over WiFi
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.iwlan.enable=true
+
+# Disable snapshot feature
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.snapshot_enabled=0 \
+    persist.radio.snapshot_timer=0
+
+# LTE, CDMA, GSM/WCDMA
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=10 \
+    telephony.lteOnCdmaDevice=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_cdma_sub=0
 
 # SDCard
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -327,15 +350,13 @@ PRODUCT_PACKAGES += \
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
+    imssettings
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+PRODUCT_LOADED_BY_PRIVILEGED_MODULES += \
+    ims \
+    qcrilhook \
+    qti-vzw-ims-internal \
+    embmslibrary
 
 # TextClassifier
 PRODUCT_PACKAGES += \
