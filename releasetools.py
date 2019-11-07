@@ -1,5 +1,5 @@
-# Copyright (C) 2009 The Android Open Source Project
-# Copyright (c) 2011, The Linux Foundation. All rights reserved.
+# Copyright (C) 2009-2019 The Android Open Source Project
+# Copyright (c) 2011-2019, The Linux Foundation. All rights reserved.
 # Copyright (C) 2017-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
